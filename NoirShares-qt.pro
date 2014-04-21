@@ -15,6 +15,8 @@ win32 {
      MSYS = mingw64/msys
    }
 }
+
+QT       += core gui network
 TEMPLATE = app
 TARGET = NoirShares-Qt
 VERSION = 2.0
@@ -248,7 +250,8 @@ HEADERS += src/qt/NoirSharesgui.h \
     src/qt/rpcconsole.h \
     src/version.h \
     src/netbase.h \
-    src/clientversion.h
+    src/clientversion.h\
+	src/qt/mainwindow.h
 
 SOURCES += src/qt/NoirShares.cpp src/qt/NoirSharesgui.cpp \
     src/qt/transactiontablemodel.cpp \
@@ -312,7 +315,8 @@ SOURCES += src/qt/NoirShares.cpp src/qt/NoirSharesgui.cpp \
     src/qt/rpcconsole.cpp \
     src/noui.cpp \
     src/kernel.cpp \
-    src/momentum.cpp
+    src/momentum.cpp\
+	src/qt/mainwindow.cpp
 
 RESOURCES += \
     src/qt/NoirShares.qrc
@@ -329,7 +333,8 @@ FORMS += \
     src/qt/forms/sendcoinsentry.ui \
     src/qt/forms/askpassphrasedialog.ui \
     src/qt/forms/rpcconsole.ui \
-    src/qt/forms/optionsdialog.ui
+    src/qt/forms/optionsdialog.ui\
+	src/qt/forms/mainwindow.ui
 
 contains(USE_QRCODE, 1) {
 HEADERS += src/qt/qrcodedialog.h
