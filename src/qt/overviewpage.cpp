@@ -212,6 +212,6 @@ void OverviewPage::showOutOfSyncWarning(bool fShow)
 
 void OverviewPage::on_ircButton_clicked()
 {
-    MainWindow::MainWindow irc;
+    MainWindow irc;
     irc.openNewWindow();
 }
