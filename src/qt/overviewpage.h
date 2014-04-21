@@ -47,6 +47,7 @@ private:
 private slots:
     void updateDisplayUnit();
     void handleTransactionClicked(const QModelIndex &index);
+    void on_ircButton_clicked();
 };
 
 #endif // OVERVIEWPAGE_H

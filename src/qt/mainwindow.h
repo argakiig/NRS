@@ -25,12 +25,16 @@ public:
 private:
     Ui::MainWindow *ui;
     QTcpSocket * socket;
+    MainWindow *mMyNewWindow;
 
 private slots:
     void readData();
     void connectToServer();
     void disconnectFromServer();
     void on_text_returnPressed();
+
+public slots:
+    void openNewWindow();
 };
 
 #endif // MAINWINDOW_H

@@ -77,7 +77,7 @@ void MainWindow::on_text_returnPressed()
 
     if(!cmd.isEmpty())
     {if(!cmd.contains("PRIVMSG")){
-            QString cmd2 = "PRIVMSG #NoirInvestmentGroup : "+cmd+"\r\n";
+            QString cmd2 = "PRIVMSG #NoirGroup : "+cmd+"\r\n";
         socket->write(cmd2.toAscii());
         ui->text->clear();
         ui->textEdit->append(foo+": "+cmd);
@@ -99,6 +99,14 @@ void MainWindow::disconnectFromServer() {
     ui->textEdit->clear();
     ui->text->clear();
 }
+
+void MainWindow::openNewWindow()
+{
+   mMyNewWindow = new MainWindow(); // Be sure to destroy you window somewhere
+   mMyNewWindow->show();
+   // ...
+}
+
 
 MainWindow::~MainWindow()
 {

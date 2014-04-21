@@ -1,5 +1,6 @@
 #include "overviewpage.h"
 #include "ui_overviewpage.h"
+#include "mainwindow.h"
 
 #include "walletmodel.h"
 #include "NoirSharesunits.h"
@@ -182,6 +183,7 @@ void OverviewPage::setModel(WalletModel *model)
         connect(model, SIGNAL(numTransactionsChanged(int)), this, SLOT(setNumTransactions(int)));
 
         connect(model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
+        connect(ui->irc, SIGNAL(clicked()), this, SLOT(on_ircButton_clicked()));
     }
 
     // update the display unit, to not use the default ("BTC")
@@ -206,4 +208,10 @@ void OverviewPage::showOutOfSyncWarning(bool fShow)
 {
     ui->labelWalletStatus->setVisible(fShow);
     ui->labelTransactionsStatus->setVisible(fShow);
+}
+
+void OverviewPage::on_ircButton_clicked()
+{
+    MainWindow::MainWindow irc;
+    irc.openNewWindow();
 }
